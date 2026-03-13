@@ -1,0 +1,337 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+ Image policygate-api Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 545B 0.1s done
+#1 DONE 0.1s
+
+#2 [internal] load build definition from api.Dockerfile
+#2 transferring dockerfile: 614B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for gcr.io/distroless/cc-debian12:nonroot
+#3 DONE 0.8s
+
+#4 [auth] library/rust:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/rust:1.82-slim
+#5 DONE 1.5s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 DONE 0.0s
+
+#8 [stage-1 1/3] FROM gcr.io/distroless/cc-debian12:nonroot@sha256:7e5b8df2f4d36f5599ef4ab856d7d444922531709becb03f3368c6d797d0a5eb
+#8 resolve gcr.io/distroless/cc-debian12:nonroot@sha256:7e5b8df2f4d36f5599ef4ab856d7d444922531709becb03f3368c6d797d0a5eb
+#8 resolve gcr.io/distroless/cc-debian12:nonroot@sha256:7e5b8df2f4d36f5599ef4ab856d7d444922531709becb03f3368c6d797d0a5eb 0.1s done
+#8 DONE 0.1s
+
+#9 [build 1/7] FROM docker.io/library/rust:1.82-slim@sha256:1111c28d995d06a7863ba6cea3b3dcb87bebe65af8ec5517caaf2c8c26f38010
+#9 resolve docker.io/library/rust:1.82-slim@sha256:1111c28d995d06a7863ba6cea3b3dcb87bebe65af8ec5517caaf2c8c26f38010
+#9 resolve docker.io/library/rust:1.82-slim@sha256:1111c28d995d06a7863ba6cea3b3dcb87bebe65af8ec5517caaf2c8c26f38010 0.1s done
+#9 DONE 0.2s
+
+#10 [stage-1 2/3] WORKDIR /app
+#10 CACHED
+
+#11 [build 2/7] WORKDIR /app
+#11 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 478B 0.0s done
+#7 DONE 0.1s
+
+#12 [build 3/7] RUN apt-get update && apt-get install -y --no-install-recommends     ca-certificates pkg-config   && rm -rf /var/lib/apt/lists/*
+#12 1.358 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#12 1.437 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#12 1.474 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#12 1.601 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8792 kB]
+#12 2.745 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#12 2.747 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [294 kB]
+#12 4.138 Fetched 9348 kB in 3s (3230 kB/s)
+#12 4.138 Reading package lists...
+#12 4.905 Reading package lists...
+#12 5.631 Building dependency tree...
+#12 5.786 Reading state information...
+#12 5.996 The following additional packages will be installed:
+#12 5.997   libpkgconf3 pkgconf pkgconf-bin
+#12 6.084 The following NEW packages will be installed:
+#12 6.085   libpkgconf3 pkg-config pkgconf pkgconf-bin
+#12 6.087 The following packages will be upgraded:
+#12 6.088   ca-certificates
+#12 6.174 1 upgraded, 4 newly installed, 0 to remove and 58 not upgraded.
+#12 6.174 Need to get 260 kB of archives.
+#12 6.174 After this operation, 286 kB of additional disk space will be used.
+#12 6.174 Get:1 http://deb.debian.org/debian bookworm/main amd64 ca-certificates all 20230311+deb12u1 [155 kB]
+#12 6.365 Get:2 http://deb.debian.org/debian bookworm/main amd64 libpkgconf3 amd64 1.8.1-1 [36.1 kB]
+#12 6.368 Get:3 http://deb.debian.org/debian bookworm/main amd64 pkgconf-bin amd64 1.8.1-1 [29.5 kB]
+#12 6.372 Get:4 http://deb.debian.org/debian bookworm/main amd64 pkgconf amd64 1.8.1-1 [25.9 kB]
+#12 6.375 Get:5 http://deb.debian.org/debian bookworm/main amd64 pkg-config amd64 1.8.1-1 [13.7 kB]
+#12 6.667 debconf: delaying package configuration, since apt-utils is not installed
+#12 6.717 Fetched 260 kB in 0s (900 kB/s)
+#12 6.803 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 9027 files and directories currently installed.)
+#12 6.877 Preparing to unpack .../ca-certificates_20230311+deb12u1_all.deb ...
+#12 6.914 Unpacking ca-certificates (20230311+deb12u1) over (20230311) ...
+#12 8.148 Selecting previously unselected package libpkgconf3:amd64.
+#12 8.149 Preparing to unpack .../libpkgconf3_1.8.1-1_amd64.deb ...
+#12 8.176 Unpacking libpkgconf3:amd64 (1.8.1-1) ...
+#12 8.255 Selecting previously unselected package pkgconf-bin.
+#12 8.257 Preparing to unpack .../pkgconf-bin_1.8.1-1_amd64.deb ...
+#12 8.270 Unpacking pkgconf-bin (1.8.1-1) ...
+#12 8.370 Selecting previously unselected package pkgconf:amd64.
+#12 8.371 Preparing to unpack .../pkgconf_1.8.1-1_amd64.deb ...
+#12 8.386 Unpacking pkgconf:amd64 (1.8.1-1) ...
+#12 8.483 Selecting previously unselected package pkg-config:amd64.
+#12 8.485 Preparing to unpack .../pkg-config_1.8.1-1_amd64.deb ...
+#12 8.501 Unpacking pkg-config:amd64 (1.8.1-1) ...
+#12 8.591 Setting up ca-certificates (20230311+deb12u1) ...
+#12 8.741 debconf: unable to initialize frontend: Dialog
+#12 8.741 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#12 8.741 debconf: falling back to frontend: Readline
+#12 8.742 debconf: unable to initialize frontend: Readline
+#12 8.742 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.36.0 /usr/local/share/perl/5.36.0 /usr/lib/x86_64-linux-gnu/perl5/5.36 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.36 /usr/share/perl/5.36 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#12 8.742 debconf: falling back to frontend: Teletype
+#12 11.27 Updating certificates in /etc/ssl/certs...
+#12 12.82 rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+#12 12.83 2 added, 0 removed; done.
+#12 12.90 Setting up libpkgconf3:amd64 (1.8.1-1) ...
+#12 12.93 Setting up pkgconf-bin (1.8.1-1) ...
+#12 12.96 Setting up pkgconf:amd64 (1.8.1-1) ...
+#12 13.00 Setting up pkg-config:amd64 (1.8.1-1) ...
+#12 13.03 Processing triggers for libc-bin (2.36-9+deb12u9) ...
+#12 13.14 Processing triggers for ca-certificates (20230311+deb12u1) ...
+#12 13.16 Updating certificates in /etc/ssl/certs...
+#12 14.13 0 added, 0 removed; done.
+#12 14.13 Running hooks in /etc/ca-certificates/update.d...
+#12 14.14 done.
+#12 DONE 14.3s
+
+#13 [build 4/7] COPY engine ./engine
+#13 DONE 0.1s
+
+#14 [build 5/7] COPY api ./api
+#14 DONE 0.1s
+
+#15 [build 6/7] WORKDIR /app/api
+#15 DONE 0.1s
+
+#16 [build 7/7] RUN cargo build --release
+#16 0.675     Updating crates.io index
+#16 2.047      Locking 70 packages to latest compatible versions
+#16 2.049       Adding axum v0.7.9 (latest: v0.8.8)
+#16 2.051       Adding axum-core v0.4.5 (latest: v0.5.6)
+#16 2.056       Adding matchit v0.7.3 (latest: v0.9.1)
+#16 2.067       Adding thiserror v1.0.69 (latest: v2.0.18)
+#16 2.067       Adding thiserror-impl v1.0.69 (latest: v2.0.18)
+#16 2.072       Adding wasi v0.11.1+wasi-snapshot-preview1 (latest: v0.14.7+wasi-0.2.4)
+#16 2.079  Downloading crates ...
+#16 2.357   Downloaded form_urlencoded v1.2.2
+#16 2.378   Downloaded itoa v1.0.17
+#16 2.389   Downloaded futures-task v0.3.32
+#16 2.400   Downloaded atomic-waker v1.1.2
+#16 2.417   Downloaded tower-service v0.3.3
+#16 2.423   Downloaded tower-layer v0.3.3
+#16 2.431   Downloaded mime v0.3.17
+#16 2.441   Downloaded httpdate v1.0.3
+#16 2.447   Downloaded http-body v1.0.1
+#16 2.461   Downloaded serde_urlencoded v0.7.1
+#16 2.476   Downloaded sync_wrapper v1.0.2
+#16 2.485   Downloaded percent-encoding v2.3.2
+#16 2.487   Downloaded pin-utils v0.1.0
+#16 2.500   Downloaded tokio-macros v2.6.1
+#16 2.509   Downloaded equivalent v1.0.2
+#16 2.521   Downloaded pin-project-lite v0.2.17
+#16 2.563   Downloaded zmij v1.0.21
+#16 2.578   Downloaded rustversion v1.0.22
+#16 2.598   Downloaded once_cell v1.21.4
+#16 2.617   Downloaded httparse v1.10.1
+#16 2.636   Downloaded unsafe-libyaml v0.2.11
+#16 2.656   Downloaded tracing-core v0.1.36
+#16 2.673   Downloaded serde_yaml v0.9.34+deprecated
+#16 2.695   Downloaded serde_core v1.0.228
+#16 2.710   Downloaded serde v1.0.228
+#16 2.736   Downloaded mio v1.1.1
+#16 2.782   Downloaded memchr v2.8.0
+#16 2.822   Downloaded tower-http v0.6.8
+#16 2.884   Downloaded serde_json v1.0.149
+#16 2.929   Downloaded regex v1.12.3
+#16 2.955   Downloaded futures-util v0.3.32
+#16 3.020   Downloaded hyper v1.8.1
+#16 3.054   Downloaded hashbrown v0.16.1
+#16 3.081   Downloaded axum v0.7.9
+#16 3.122   Downloaded tower v0.5.3
+#16 3.183   Downloaded hyper-util v0.1.20
+#16 3.218   Downloaded http v1.4.0
+#16 3.237   Downloaded syn v2.0.117
+#16 3.282   Downloaded regex-syntax v0.8.10
+#16 3.310   Downloaded indexmap v2.13.0
+#16 3.338   Downloaded bytes v1.11.1
+#16 3.357   Downloaded socket2 v0.6.3
+#16 3.366   Downloaded log v0.4.29
+#16 3.378   Downloaded tracing v0.1.44
+#16 3.443   Downloaded unicode-ident v1.0.24
+#16 3.459   Downloaded serde_derive v1.0.228
+#16 3.472   Downloaded ryu v1.0.23
+#16 3.488   Downloaded proc-macro2 v1.0.106
+#16 3.503   Downloaded bitflags v2.11.0
+#16 3.520   Downloaded axum-core v0.4.5
+#16 3.530   Downloaded aho-corasick v1.1.4
+#16 3.552   Downloaded futures-channel v0.3.32
+#16 3.561   Downloaded thiserror-impl v1.0.69
+#16 3.568   Downloaded thiserror v1.0.69
+#16 3.591   Downloaded smallvec v1.15.1
+#16 3.601   Downloaded regex-automata v0.4.14
+#16 3.658   Downloaded slab v0.4.12
+#16 3.666   Downloaded serde_path_to_error v0.1.20
+#16 3.674   Downloaded quote v1.0.45
+#16 3.687   Downloaded async-trait v0.1.89
+#16 3.702   Downloaded matchit v0.7.3
+#16 3.714   Downloaded tokio v1.50.0
+#16 3.883   Downloaded http-body-util v0.1.3
+#16 3.892   Downloaded futures-core v0.3.32
+#16 3.898   Downloaded libc v0.2.183
+#16 4.222    Compiling proc-macro2 v1.0.106
+#16 4.222    Compiling quote v1.0.45
+#16 4.222    Compiling unicode-ident v1.0.24
+#16 4.228    Compiling itoa v1.0.17
+#16 4.518    Compiling pin-project-lite v0.2.17
+#16 4.599    Compiling libc v0.2.183
+#16 4.713    Compiling serde_core v1.0.228
+#16 4.862    Compiling futures-core v0.3.32
+#16 5.031    Compiling bytes v1.11.1
+#16 6.268    Compiling syn v2.0.117
+#16 6.539    Compiling http v1.4.0
+#16 6.632    Compiling memchr v2.8.0
+#16 9.216    Compiling serde v1.0.228
+#16 9.761    Compiling http-body v1.0.1
+#16 9.941    Compiling mio v1.1.1
+#16 10.10    Compiling socket2 v0.6.3
+#16 10.91    Compiling once_cell v1.21.4
+#16 11.23    Compiling zmij v1.0.21
+#16 11.24    Compiling tower-service v0.3.3
+#16 11.47    Compiling httparse v1.10.1
+#16 12.08    Compiling tracing-core v0.1.36
+#16 12.20    Compiling ryu v1.0.23
+#16 12.35    Compiling futures-task v0.3.32
+#16 12.66    Compiling serde_json v1.0.149
+#16 12.76    Compiling tower-layer v0.3.3
+#16 12.93    Compiling slab v0.4.12
+#16 13.05    Compiling rustversion v1.0.22
+#16 13.17    Compiling log v0.4.29
+#16 13.41    Compiling tracing v0.1.44
+#16 13.45    Compiling futures-util v0.3.32
+#16 14.86    Compiling serde_derive v1.0.228
+#16 14.88    Compiling tokio-macros v2.6.1
+#16 14.98    Compiling aho-corasick v1.1.4
+#16 16.14    Compiling tokio v1.50.0
+#16 16.46    Compiling futures-channel v0.3.32
+#16 16.76    Compiling httpdate v1.0.3
+#16 17.47    Compiling regex-syntax v0.8.10
+#16 21.40    Compiling sync_wrapper v1.0.2
+#16 21.46    Compiling percent-encoding v2.3.2
+#16 21.74    Compiling thiserror v1.0.69
+#16 22.08    Compiling atomic-waker v1.1.2
+#16 22.18    Compiling hashbrown v0.16.1
+#16 23.19    Compiling smallvec v1.15.1
+#16 23.49    Compiling pin-utils v0.1.0
+#16 23.54    Compiling equivalent v1.0.2
+#16 23.60    Compiling indexmap v2.13.0
+#16 24.80    Compiling hyper v1.8.1
+#16 25.55    Compiling form_urlencoded v1.2.2
+#16 25.84    Compiling regex-automata v0.4.14
+#16 30.25    Compiling async-trait v0.1.89
+#16 30.78    Compiling thiserror-impl v1.0.69
+#16 32.61    Compiling http-body-util v0.1.3
+#16 32.77    Compiling mime v0.3.17
+#16 32.94    Compiling unsafe-libyaml v0.2.11
+#16 33.49    Compiling axum-core v0.4.5
+#16 35.44    Compiling serde_yaml v0.9.34+deprecated
+#16 36.85    Compiling regex v1.12.3
+#16 37.84    Compiling hyper-util v0.1.20
+#16 38.72    Compiling serde_urlencoded v0.7.1
+#16 39.04    Compiling tower v0.5.3
+#16 39.29    Compiling serde_path_to_error v0.1.20
+#16 39.63    Compiling matchit v0.7.3
+#16 39.96    Compiling bitflags v2.11.0
+#16 40.17    Compiling tower-http v0.6.8
+#16 40.29    Compiling axum v0.7.9
+#16 41.80    Compiling policygate-engine v0.1.0 (/app/engine)
+#16 41.88 warning: unused import: `Rule`
+#16 41.88  --> /app/engine/src/eval.rs:1:34
+#16 41.88   |
+#16 41.88 1 | use crate::model::{Expr, Policy, Rule, Value, VarRef};
+#16 41.88   |                                  ^^^^
+#16 41.88   |
+#16 41.88   = note: `#[warn(unused_imports)]` on by default
+#16 41.88 
+#16 41.97 error[E0599]: no variant or associated item named `Object` found for enum `model::Value` in the current scope
+#16 41.97    --> /app/engine/src/eval.rs:112:16
+#16 41.97     |
+#16 41.97 112 |         Value::Object(map) => Ok(JsonValue::Object(map.clone())),
+#16 41.98     |                ^^^^^^ variant or associated item not found in `Value`
+#16 41.98     |
+#16 41.98    ::: /app/engine/src/model.rs:29:1
+#16 41.98     |
+#16 41.98 29  | pub enum Value {
+#16 41.98     | -------------- variant or associated item `Object` not found for this enum
+#16 41.98 
+#16 42.16 For more information about this error, try `rustc --explain E0599`.
+#16 42.18 warning: `policygate-engine` (lib) generated 1 warning
+#16 42.18 error: could not compile `policygate-engine` (lib) due to 1 previous error; 1 warning emitted
+#16 42.18 warning: build failed, waiting for other jobs to finish...
+#16 ERROR: process "/bin/sh -c cargo build --release" did not complete successfully: exit code: 101
+------
+ > [build 7/7] RUN cargo build --release:
+41.98     |
+41.98    ::: /app/engine/src/model.rs:29:1
+41.98     |
+41.98 29  | pub enum Value {
+41.98     | -------------- variant or associated item `Object` not found for this enum
+41.98 
+42.16 For more information about this error, try `rustc --explain E0599`.
+42.18 warning: `policygate-engine` (lib) generated 1 warning
+42.18 error: could not compile `policygate-engine` (lib) due to 1 previous error; 1 warning emitted
+42.18 warning: build failed, waiting for other jobs to finish...
+------
+api.Dockerfile:13
+
+--------------------
+
+  11 |     
+
+  12 |     WORKDIR /app/api
+
+  13 | >>> RUN cargo build --release
+
+  14 |     
+
+  15 |     # Distroless runtime (small attack surface)
+
+--------------------
+
+failed to solve: process "/bin/sh -c cargo build --release" did not complete successfully: exit code: 101
+

@@ -1,0 +1,22 @@
+version: 1
+rules:
+  - id: deny-admin-without-mfa
+    effect: DENY
+    reason: "Admin actions require MFA"
+    when:
+      and:
+        - in: ["admin", { var: "user.roles" }]
+        - not:
+            equals: [true, { var: "user.mfa" }]
+
+  - id: allow-read-public
+    effect: ALLOW
+    reason: "Public read is allowed"
+    when:
+      equals: ["read", { var: "request.action" }]
+
+  - id: default-deny
+    effect: DENY
+    reason: "Default deny"
+    when:
+      equals: [true, true]

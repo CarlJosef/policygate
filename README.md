@@ -1,9 +1,25 @@
-# 1) start everything
+## 2) Test API
 
-docker compose up --build
+### PowerShell (Windows)
 
-# 2) test API
+```powershell
+$policy = @"
+version: 1
+rules:
+  - id: default-deny
+    effect: DENY
+    reason: Default deny
+    when:
+      equals: [true, true]
+"@
 
-curl -s http://localhost:8080/v1/decide \
- -H 'Content-Type: application/json' \
- -d '{"policy":"version: 1\nrules:\n - id: default-deny\n effect: DENY\n reason: \"Default deny\"\n when:\n equals: [true, true]\n","context":{"user":{"roles":["admin"],"mfa":false},"request":{"action":"read"}}}' | jq
+$body = @{
+  policy  = $policy
+  context = @{
+    user    = @{ roles = @("admin"); mfa = $false }
+    request = @{ action = "read" }
+  }
+} | ConvertTo-Json -Depth 10
+
+Invoke-RestMethod -Method Post -Uri "http://localhost:8080/v1/decide" -ContentType "application/json" -Body $body
+```

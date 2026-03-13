@@ -1,0 +1,116 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from web.Dockerfile
+#1 transferring dockerfile: 326B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/nginx:alpine
+#2 ...
+
+#3 [internal] load metadata for docker.io/library/node:20
+#3 DONE 0.7s
+
+#2 [internal] load metadata for docker.io/library/nginx:alpine
+#2 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [stage-1 1/2] FROM docker.io/library/nginx:alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0
+#6 resolve docker.io/library/nginx:alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0 0.1s done
+#6 DONE 0.1s
+
+#7 [build 1/7] FROM docker.io/library/node:20@sha256:bd3086f61c05f8925ed2026bee608a40ad9f8a5d28b6e593342237469ee5b621
+#7 resolve docker.io/library/node:20@sha256:bd3086f61c05f8925ed2026bee608a40ad9f8a5d28b6e593342237469ee5b621
+#7 resolve docker.io/library/node:20@sha256:bd3086f61c05f8925ed2026bee608a40ad9f8a5d28b6e593342237469ee5b621 0.1s done
+#7 DONE 0.1s
+
+#6 [stage-1 1/2] FROM docker.io/library/nginx:alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0
+#6 CACHED
+
+#8 [build 2/7] WORKDIR /app
+#8 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 34.58kB 0.1s done
+#5 DONE 0.2s
+
+#9 [build 3/7] COPY web ./web
+#9 DONE 0.9s
+
+#10 [build 4/7] WORKDIR /app/web
+#10 DONE 0.1s
+
+#11 [build 5/7] RUN npm ci
+#11 4.505 
+#11 4.505 added 21 packages, and audited 22 packages in 4s
+#11 4.505 
+#11 4.505 3 packages are looking for funding
+#11 4.505   run `npm fund` for details
+#11 4.519 
+#11 4.519 2 moderate severity vulnerabilities
+#11 4.519 
+#11 4.519 To address all issues (including breaking changes), run:
+#11 4.519   npm audit fix --force
+#11 4.519 
+#11 4.519 Run `npm audit` for details.
+#11 4.521 npm notice
+#11 4.521 npm notice New major version of npm available! 10.8.2 -> 11.11.1
+#11 4.521 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.1
+#11 4.521 npm notice To update run: npm install -g npm@11.11.1
+#11 4.521 npm notice
+#11 DONE 4.6s
+
+#12 [build 6/7] RUN rm -f vite.config.js vite.config.js.*
+#12 DONE 0.4s
+
+#13 [build 7/7] RUN npm run build
+#13 0.639 
+#13 0.639 > policygate-web@0.1.0 build
+#13 0.639 > tsc --noEmit && vite build --config vite.config.ts
+#13 0.639 
+#13 2.431 vite v5.4.21 building for production...
+#13 2.547 transforming...
+#13 2.609 Ô£ô 3 modules transformed.
+#13 2.611 x Build failed in 116ms
+#13 2.612 error during build:
+#13 2.612 [vite:define] Transform failed with 1 error:
+#13 2.612 /app/web/src/App.js:77:12: ERROR: The JSX syntax extension is not currently enabled
+#13 2.612 file: /app/web/src/App.js
+#13 2.612     at failureErrorWithLog (/app/web/node_modules/esbuild/lib/main.js:1472:15)
+#13 2.612     at /app/web/node_modules/esbuild/lib/main.js:755:50
+#13 2.612     at responseCallbacks.<computed> (/app/web/node_modules/esbuild/lib/main.js:622:9)
+#13 2.612     at handleIncomingPacket (/app/web/node_modules/esbuild/lib/main.js:677:12)
+#13 2.612     at Socket.readFromStdout (/app/web/node_modules/esbuild/lib/main.js:600:7)
+#13 2.612     at Socket.emit (node:events:524:28)
+#13 2.612     at addChunk (node:internal/streams/readable:561:12)
+#13 2.612     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+#13 2.612     at Readable.push (node:internal/streams/readable:392:5)
+#13 2.612     at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+#13 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+------
+ > [build 7/7] RUN npm run build:
+2.612     at failureErrorWithLog (/app/web/node_modules/esbuild/lib/main.js:1472:15)
+2.612     at /app/web/node_modules/esbuild/lib/main.js:755:50
+2.612     at responseCallbacks.<computed> (/app/web/node_modules/esbuild/lib/main.js:622:9)
+2.612     at handleIncomingPacket (/app/web/node_modules/esbuild/lib/main.js:677:12)
+2.612     at Socket.readFromStdout (/app/web/node_modules/esbuild/lib/main.js:600:7)
+2.612     at Socket.emit (node:events:524:28)
+2.612     at addChunk (node:internal/streams/readable:561:12)
+2.612     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+2.612     at Readable.push (node:internal/streams/readable:392:5)
+2.612     at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+------
+web.Dockerfile:11
+--------------------
+   9 |     RUN rm -f vite.config.js vite.config.js.*
+  10 |     
+  11 | >>> RUN npm run build
+  12 |     
+  13 |     FROM nginx:alpine
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1

@@ -1,0 +1,4 @@
+{
+  "user": { "id": "u123", "roles": ["admin"], "mfa": false },
+  "request": { "resource": "invoice:42", "action": "read" }
+}
