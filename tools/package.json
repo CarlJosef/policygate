@@ -1,0 +1,11 @@
+{
+  "name": "policygate-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "badges": "node generate-badges.mjs"
+  },
+  "dependencies": {
+    "badge-maker": "^4.0.0"
+  }
+}
