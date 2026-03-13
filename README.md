@@ -1,3 +1,5 @@
+![CI](https://github.com/CarlJosef/policygate/actions/workflows/ci.yml/badge.svg)
+
 ## 2) Test API
 
 ### PowerShell (Windows)
